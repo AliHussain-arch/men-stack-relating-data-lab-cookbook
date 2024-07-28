@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View</title>
+</head>
+<body>
+    <%- include('../partials/_navbar.ejs') %>
+    <h1>The view page</h1>
+    <h1>name : <%=view.name%></h1>
+    <h1>instructions : <%=view.instructions%></h1>
+    <h1>owner : <%=view.owner%></h1>
+    <h1>ingredients : <%=view.ingredients%></h1>
+    <form action="/recipes/<%=view._id%>?_method=DELETE" method="POST">
+        <button type="submit">DELETE</button>
+    </form>
+    <form action="/recipes/<%=view._id%>/edit" method="GET">
+        <button type="submit">EDIT</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Updatepage</title>
+</head>
+<body>
+    <%- include('../partials/_navbar.ejs') %>
+    <h1>Update page</h1>
+    <form action="/recipes/:<%=view.id%>?_method=PUT" method="POST">
+        <h1>Old name : <%= view.name %></h1>
+        <label for="name">New name</label>
+        <input type="text" name="newname" id="newname" required>
+        <h1>Old instructions : <%= view.instructions %></h1>
+        <label for="instructions">New instructions</label>
+        <textarea type="textarea" name="newinstructions" id="newinstructions"></textarea>
+        <h1>old ingredients : <%= view.ingredients %></h1>
+        <label for="newingredients">New ingredients</label>
+        <input type="text" name="newingredients" id="newingredients">
+        <button type="submit">submit</button>
+    </form>
+</body>
+</html>

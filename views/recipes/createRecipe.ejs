@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create recipe</title>
+</head>
+<body>
+    <%- include('../partials/_navbar.ejs') %>
+    <form action="/recipes" method="POST">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" required>
+        <label for="instructions">instructions</label>
+        <textarea type="textarea" name="instructions" id="instructions"></textarea>
+        <label for="name">Owner</label>
+        <input type="text" name="owner" id="owner" value=<%=`${id}`%>>
+        <label for="ingredients">ingredients</label>
+        <input type="text" name="ingredients" id="ingredients">
+        <button type="submit">submit</button>
+    </form>
+</body>
+</html>
