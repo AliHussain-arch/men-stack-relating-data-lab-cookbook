@@ -15,9 +15,14 @@
         <h1>Old instructions : <%= view.instructions %></h1>
         <label for="instructions">New instructions</label>
         <textarea type="textarea" name="newinstructions" id="newinstructions"></textarea>
-        <h1>old ingredients : <%= view.ingredients %></h1>
-        <label for="newingredients">New ingredients</label>
-        <input type="text" name="newingredients" id="newingredients">
+        <h1>old ingredients : <%= array %></h1>
+        <label>New ingredients</label>
+        <% choiceIngredients.forEach(ingredient => { %>
+            <div>
+                <input type="checkbox" name="newingredients" value="<%= ingredient._id %>" id="newingredient_<%= ingredient._id %>">
+                <label for="newingredient_<%= ingredient._id %>"><%= ingredient.name %></label>
+            </div>
+        <% }) %>
         <button type="submit">submit</button>
     </form>
 </body>

@@ -3,20 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create recipe</title>
+    <title>Create Recipe</title>
 </head>
 <body>
     <%- include('../partials/_navbar.ejs') %>
     <form action="/recipes" method="POST">
         <label for="name">Name</label>
         <input type="text" name="name" id="name" required>
-        <label for="instructions">instructions</label>
-        <textarea type="textarea" name="instructions" id="instructions"></textarea>
-        <label for="name">Owner</label>
-        <input type="text" name="owner" id="owner" value=<%=`${id}`%>>
-        <label for="ingredients">ingredients</label>
-        <input type="text" name="ingredients" id="ingredients">
-        <button type="submit">submit</button>
+
+        <label for="instructions">Instructions</label>
+        <textarea name="instructions" id="instructions"></textarea>
+
+        <label for="owner">Owner</label>
+        <input type="text" name="owner" id="owner" value="<%= id %>" required>
+
+        <label>Ingredients</label>
+        <% ingredients.forEach(ingredient => { %>
+            <div>
+                <input type="checkbox" name="ingredients" value="<%= ingredient._id %>" id="ingredient_<%= ingredient._id %>">
+                <label for="ingredient_<%= ingredient._id %>"><%= ingredient.name %></label>
+            </div>
+        <% }) %>
+
+        <button type="submit">Submit</button>
     </form>
 </body>
 </html>

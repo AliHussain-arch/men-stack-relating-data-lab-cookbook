@@ -9,6 +9,7 @@
     <h1>Welcome to recipes homepage</h1>
     <%- include('../partials/_navbar.ejs') %>
     <h1>Welcome to CookBook</h1>
+    <% if(recipeCreated) {%><p style="background-color: green; color: white;">New recipe has been added</p> <%} %>
     <% recipes.forEach(element => { %>
         <div><a href="/<%=id%>/recipes/<%=element.id%>"><%= element.name %></a></div>
     <% }); %>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingredients</title>
+</head>
+<body>
+    <h1>Welcome to Ingredients homepage</h1>
+    <h1>Ingredients list</h1>
+    <a href="/ingredients/new">Create new Ingredient</a>
+    <% ingredients.forEach(element => { %>
+        <div><%= element.name %></div>
+    <% }); %>
+</body>
+</html>
