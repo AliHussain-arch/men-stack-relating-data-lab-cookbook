@@ -159,11 +159,11 @@ app.get('/ingredients/new',(req,res)=>{
 
 //Create
 app.post('/ingredients',async (req,res)=>{
-    const ingredientName = req.body.ingredient.trim().toLowerCase();
+    const ingredientName = req.body.ingredient.trim().toUpperCase();
     const existingIngredient = await ingredient.findOne({ name: ingredientName });
     if(!existingIngredient){
         await ingredient.create({
-            name: req.body.ingredient
+            name: ingredientName
         });
     }
     res.redirect('/ingredients');
