@@ -161,7 +161,7 @@ app.get('/ingredients/new',(req,res)=>{
 app.post('/ingredients',async (req,res)=>{
     const ingredientName = req.body.ingredient.trim().toLowerCase();
     const existingIngredient = await ingredient.findOne({ name: ingredientName });
-    if(existingIngredient){
+    if(!existingIngredient){
         await ingredient.create({
             name: req.body.ingredient
         });
